@@ -39,4 +39,15 @@ public class UserController {
     model.addAttribute("user",userService.getUserById(id));
     return "edit_user";
     }
+    @PostMapping("/users/{id}")
+    public String updateUser(@PathVariable long id ,@ModelAttribute("user") UserEntity userEntity, Model model ){
+        UserEntity existingUser = userService.getUserById(id);
+        existingUser.setUsername(userEntity.getUsername());
+        existingUser.setLastname(userEntity.getLastname());
+        existingUser.setEmail(userEntity.getEmail());
+
+        userService.updateUser(existingUser);
+        return "redirect:/users";
+
+    }
 }
