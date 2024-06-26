@@ -17,7 +17,7 @@
                     <input
                             type="text"
                             name="username"
-                            th:field="username"
+                            th:field="*{username}"
                             class="form-control"
                             placeholder="Enter User name"
                     />
@@ -27,7 +27,7 @@
                     <input
                             type="text"
                             name="lastname"
-                            th:field="lastname"
+                            th:field="*{lastname}"
                             class="form-control"
                             placeholder="Enter User lastname"
                     />
@@ -37,12 +37,12 @@
                     <input
                             type="text"
                             name="email"
-                            th:field="email"
+                            th:field="*{email}"
                             class="form-control"
                             placeholder="Enter User email"
                     />
                 </div>
-                <div class="footer-body">
+                <div class="box-footer">
                     <button type="submit" class="btn btn-primary">
                         Submit
                     </button>
