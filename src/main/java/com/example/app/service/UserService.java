@@ -8,4 +8,7 @@ public interface UserService  {
     List<UserEntity> getAllUsers();
 
     UserEntity saveUser(UserEntity user);
+
+    UserEntity getUserById(Long id);
+    UserEntity updateUser(UserEntity user);
 }
