@@ -10,15 +10,15 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository _userRepository;
+    private UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository _userRepository) {
+    public UserServiceImpl(UserRepository userRepository) {
         super();
-        this._userRepository = _userRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
-    public List<UserEntity> selectAllUserEntity() {
-        return null;
+    public List<UserEntity> getAllUsers() {
+        return userRepository.findAll();
     }
 }

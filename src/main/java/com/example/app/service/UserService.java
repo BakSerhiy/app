@@ -4,6 +4,6 @@ import com.example.app.entity.UserEntity;
 
 import java.util.List;
 
-public interface UserService {
-    List<UserEntity> selectAllUserEntity();
+public interface UserService  {
+    List<UserEntity> getAllUsers();
 }
