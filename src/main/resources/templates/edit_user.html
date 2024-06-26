@@ -6,65 +6,66 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Library management system</a>
-        </div>
+        <a class="navbar-brand" href="#">Library management system</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a th:href="@{/users}"> Reader management system</a></li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/users}">Reader management system</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card"></div>
-        <h1 class="text-center">Update User</h1>
-        <div class="card-body">
-            <form th:action="@{/users/{id} (id=${user.id})}" th:object="${user}" method="POST">
-                <div class="form-group">
-                    <label>User name</label>
-                    <input
-                            type="text"
-                            name="username"
-                            th:field="*{username}"
-                            class="form-control"
-                            placeholder="Enter User name"
-                    />
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card">
+                <h1 class="card-header text-center">Update User</h1>
+                <div class="card-body">
+                    <form th:action="@{/users/{id} (id=${user.id})}" th:object="${user}" method="POST">
+                        <div class="form-group">
+                            <label>User name</label>
+                            <input
+                                    type="text"
+                                    name="username"
+                                    th:field="*{username}"
+                                    class="form-control"
+                                    placeholder="Enter User name"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>User lastname</label>
+                            <input
+                                    type="text"
+                                    name="lastname"
+                                    th:field="*{lastname}"
+                                    class="form-control"
+                                    placeholder="Enter User lastname"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label>User email</label>
+                            <input
+                                    type="text"
+                                    name="email"
+                                    th:field="*{email}"
+                                    class="form-control"
+                                    placeholder="Enter User email"
+                            />
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label>User lastname</label>
-                    <input
-                            type="text"
-                            name="lastname"
-                            th:field="*{lastname}"
-                            class="form-control"
-                            placeholder="Enter User lastname"
-                    />
-                </div>
-                <div class="form-group">
-                    <label>User email</label>
-                    <input
-                            type="text"
-                            name="email"
-                            th:field="*{email}"
-                            class="form-control"
-                            placeholder="Enter User email"
-                    />
-                </div>
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-primary">
-                        Submit
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
