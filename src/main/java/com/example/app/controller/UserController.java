@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 @Controller
 public class UserController {
@@ -51,8 +53,9 @@ public class UserController {
 
     }
     @GetMapping("/users/{id}")
-    public String deleteUser(@PathVariable Long id){
+    public String deleteUser(@PathVariable Long id ,RedirectAttributes redirectAttributes ){
         userService.deleteUserById(id);
+        redirectAttributes.addFlashAttribute("message", "User deleted successfully!");
         return "redirect:/users";
     }
 }
